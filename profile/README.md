@@ -1,6 +1,4 @@
-# Token Merger Protocol
-
-**The consolidation primitive that completes crypto's market infrastructure.**
+![Token Merger Protocol](./header.svg)
 
 ---
 

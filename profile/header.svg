@@ -1,0 +1,97 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0A0B"/>
+      <stop offset="0.5" stop-color="#111113"/>
+      <stop offset="1" stop-color="#0F0F11"/>
+    </linearGradient>
+
+    <!-- Radial overlay for depth -->
+    <radialGradient id="vignette" cx="0.5" cy="0.5">
+      <stop offset="0%" stop-color="#18181B" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0.3"/>
+    </radialGradient>
+
+    <!-- Teal glow -->
+    <radialGradient id="tealGlow">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter for logo -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background layers -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+  <rect width="1200" height="400" fill="url(#vignette)"/>
+  <rect width="1200" height="400" fill="url(#grid)" opacity="0.04"/>
+
+  <!-- Glow effects for atmosphere -->
+  <ellipse cx="950" cy="120" rx="350" ry="350" fill="url(#tealGlow)" opacity="0.6" style="filter: blur(90px);"/>
+  <ellipse cx="200" cy="320" rx="250" ry="250" fill="url(#tealGlow)" opacity="0.2" style="filter: blur(70px);"/>
+
+  <!-- Main content group -->
+  <g>
+    <!-- Logo mark - 70px scaled (1.75x) -->
+    <g transform="translate(220, 165) scale(1.75)">
+      <!-- Outer glow -->
+      <circle cx="20" cy="20" r="28" fill="url(#tealGlow)" opacity="0.7"/>
+
+      <!-- Dashed ring -->
+      <circle
+        cx="20"
+        cy="20"
+        r="15"
+        fill="none"
+        stroke="#2DD4BF"
+        stroke-width="2.5"
+        stroke-dasharray="66 28"
+        stroke-linecap="round"
+        filter="url(#glow)"
+      />
+
+      <!-- Center dot -->
+      <circle cx="20" cy="20" r="7" fill="#2DD4BF"/>
+    </g>
+
+    <!-- Title text - vertically centered with logo -->
+    <text x="310" y="210" style="font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; font-size: 48px; font-weight: 600; letter-spacing: -1.2px; fill: #FAFAFA;">
+      Token Merger <tspan style="font-weight: 400; fill: #71717A;">Protocol</tspan>
+    </text>
+
+    <!-- Tagline - tighter spacing -->
+    <text x="600" y="260" text-anchor="middle" style="font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; font-size: 17px; font-weight: 400; fill: #A1A1AA; letter-spacing: 0.2px;">
+      The consolidation primitive that completes crypto's market infrastructure
+    </text>
+
+    <!-- Accent line -->
+    <line x1="360" y1="280" x2="840" y2="280" stroke="#2DD4BF" stroke-width="2" opacity="0.18"/>
+  </g>
+
+  <!-- Bottom metadata - refined positioning -->
+  <text x="50" y="370" style="font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; fill: #2DD4BF; opacity: 0.6;">
+    PROTOCOL V1
+  </text>
+
+  <text x="1150" y="370" text-anchor="end" style="font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; fill: #2DD4BF; opacity: 0.6;">
+    TRUSTLESS • AUTOMATIC • COMPLETE
+  </text>
+
+  <!-- Load Sora font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&amp;display=swap');
+  </style>
+</svg>
